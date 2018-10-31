@@ -1,0 +1,19 @@
+<link rel="import" href="/bower_components/polymer/polymer.html"/>
+
+<dom-module id="user-list">
+    <template>
+        <h3>[[title]]</h3>
+        <div>{{data}}</div>
+        <hr/>
+        <template is="dom-repeat" user="{{itemArray}}">
+            <div>
+                <span>[[user]]</span>
+            </div>
+        </template>
+    </template>
+</dom-module>
+<script>
+    Polymer({
+        is:"user-list"
+    })
+</script>

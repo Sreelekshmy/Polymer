@@ -1,0 +1,28 @@
+<link rel="import" href="/bower_components/polymer/polymer.html"/>
+<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html"/>
+<link rel="import" href="user-list.html"/>
+
+<dom-module id="comm-via-databinding">
+    <template>
+        <user-list title="{{title}}" data="[[userlist]]"></user-list>
+        <iron-ajax 
+            auto
+            url="data/users.json"
+            handle-as="json"
+            last-response="{{userlist}}">
+        </iron-ajax>
+    </template>
+</dom-module>
+<script>
+    Polymer({
+        is: "comm-via-databinding",
+        properties:{
+            title:{
+                type: String,
+                value:"User list"
+            }
+        },
+        ready: function() {
+        }
+    });
+</script>
